@@ -1,7 +1,8 @@
 import { button } from '../molecules/index.js';
 
 import {
-  parseComponent
+  parseComponent,
+  addNewChild
 } from '../../utils/DOMUtils.js';
 
 function header() {
@@ -15,7 +16,7 @@ function header() {
 
   const buttonDefinition = button('Button', 'buttonTrigger', () => { console.log('Soy un boton :D') });
 
-  return parseComponent(component).appendChild(buttonDefinition);
+  return addNewChild(parseComponent(component), buttonDefinition);
 }
 
 export default header;
